@@ -87,3 +87,29 @@ Wait and input text
     [Arguments]     ${selector}  ${text}   ${timeouts}=10s
     Wait Until Element Is Enabled    ${selector}
     Input Text    ${selector}  ${text}
+    
+Enter firstname for forgot login info
+     ${firstname}=  FakerLibrary.First Name
+     log  ${firstname}
+     Set Test Variable    ${firstname}
+     Input Text  ${FORGOT_LOGIN_INFO_FIRSTNAME}     ${firstname}
+     
+Enter lastname for forgot login info
+     ${lastname}=  FakerLibrary.Last Name
+     log  ${lastname}
+     Set Test Variable    ${lastname}
+     Input Text  ${FORGOT_LOGIN_INFO_LASTNAME}      ${lastname}
+    
+Input user address for forgot login info
+    Input Text    ${FORGOT_LOGIN_INFO_ADDRESS}       Ikenga Ogidi
+    Input Text    ${FORGOT_LOGIN_INFO_CITY}     Onitsha
+    Input Text    ${FORGOT_LOGIN_INFO_STATE}     Anambra 
+    Input Text    ${FORGOT_LOGIN_INFO_ZIPCODE}    33720
+    Input Text    ${FORGOT_LOGIN_INFO_SSN}      8194B
+
+Forgot login info?
+    Click Link    ${FORGOT_LOGIN_INFO}
+    Enter firstname for forgot login info
+    Enter lastname for forgot login info
+    Input user address for forgot login info
+    Click Button    ${FIND_LOGIN_INFO_BTN} 
